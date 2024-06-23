@@ -1,10 +1,11 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import css from './ContactForm.module.css';
-import { useId } from "react";
-import * as Yup from "yup";
-import { nanoid } from "nanoid";
-import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice"; 
+import { useId } from 'react';
+import * as Yup from 'yup';
+import { nanoid } from 'nanoid';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contactsOps';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(3, 'Minimum 3 symbols').max(50, 'Maximum 50 symbols').required('required'),
@@ -46,4 +47,5 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+
+export default ContactForm
